@@ -1,0 +1,18 @@
+body {
+  font-family: Quicksand;
+  text-align: center;
+  background: #42d7d7;
+  background: linear-gradient(40deg, #42d7d7 0%, #02ffb4 36%, #006cff 100%);
+  min-height: 100vh;
+  color: white;
+}
+
+.search {
+  border: white;
+  outline: none;
+  padding: 10px;
+  width: 50%;
+  border-radius: 20px;
+  line-height: 25px;
+  text-align: center;
+}
