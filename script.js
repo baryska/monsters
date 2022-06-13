@@ -1,4 +1,4 @@
-const template = document.querySelector(".template");
+const template = document.querySelector(".card-container");
 const cardList = document.querySelector(".card-list");
 
 const getMonsters = async () => {
@@ -14,9 +14,13 @@ const generateCards = (monsters) => {
   while (i < monsters.length) {
     const clone = template.cloneNode(true);
     const monsterImage = clone.querySelector(".monster-img");
+    const monsterName = clone.querySelector(".monster-name");
+    monsterName.textContent = monsters[i].name;
+    const monsterEmail = clone.querySelector(".monster-email");
+    monsterEmail.textContent = monsters[i].email;
     monsterImage.src = `https://robohash.org/${i}?set=set1`;
+    clone.classList.remove("invisible");
     cardList.appendChild(clone);
-    console.log(monsterImage);
     i++;
   }
 };
