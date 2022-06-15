@@ -29,6 +29,7 @@ body {
   cursor: pointer;
   transition: transform 0.25s ease;
   margin: 15px;
+  overflow: hidden;
 }
 
 .card-container:hover {

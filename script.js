@@ -1,5 +1,7 @@
 const template = document.querySelector(".card-container");
 const cardList = document.querySelector(".card-list");
+const searchBar = document.querySelector(".search");
+let monsters = [];
 
 const getMonsters = async () => {
   const response = await fetch(
@@ -25,9 +27,20 @@ const generateCards = (monsters) => {
   }
 };
 
+searchBar.onkeyup = (event) => {
+  cardList.innerHTML = "";
+  const searchedName = event.target.value;
+  const selectedMonsters = monsters.filter((monster) =>
+    monster.name.toLowerCase().includes(searchedName.toLowerCase())
+  );
+  generateCards(selectedMonsters);
+};
+
 const init = async () => {
-  const monsters = await getMonsters();
+  monsters = await getMonsters();
   generateCards(monsters);
 };
+
+console.log(monsters);
 
 init();
